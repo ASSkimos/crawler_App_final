@@ -11,29 +11,28 @@ class CrawlerApp:
         self.root = root
         self.root.title("Web Crawler")
 
-        # URL input
+
         ttk.Label(root, text="Введите URL:").grid(row=0, column=0, padx=5, pady=5, sticky=tk.W)
         self.url_entry = ttk.Entry(root, width=50)
         self.url_entry.grid(row=0, column=1, padx=5, pady=5, sticky=tk.W)
 
-        # Depth input
+
         ttk.Label(root, text="Глубина:").grid(row=1, column=0, padx=5, pady=5, sticky=tk.W)
         self.depth_entry = ttk.Entry(root, width=10)
         self.depth_entry.grid(row=1, column=1, padx=5, pady=5, sticky=tk.W)
 
-        # Output display
+
         self.output = tk.Text(root, wrap=tk.WORD, width=80, height=20)
         self.output.grid(row=2, column=0, columnspan=3, padx=5, pady=5)
 
-        # Choose directory button
+
         self.directory_button = ttk.Button(root, text="Выбрать папку для сохранения", command=self.choose_directory)
         self.directory_button.grid(row=3, column=0, padx=5, pady=5)
 
-        # Start crawling button
+
         self.crawl_button = ttk.Button(root, text="Начать краулинг", command=self.start_crawl)
         self.crawl_button.grid(row=3, column=1, padx=5, pady=5)
 
-        # Save directory path
         self.save_directory = ""
 
     def choose_directory(self):
